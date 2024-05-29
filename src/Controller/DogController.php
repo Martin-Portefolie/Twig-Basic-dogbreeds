@@ -10,19 +10,20 @@ use function Symfony\Component\String\u;
 
 class DogController extends AbstractController
 {
-    // #[Route('/dog', name: 'app_dog')]
-    // public function index(): JsonResponse
-    // {
-    // return $this->json([
-    // 'message' => 'Welcome to your new controller!',
-    // 'path' => 'src/Controller/DogController.php',
-    // ]);
-    // }
-    //
+
     #[Route('/', 'app_dog')]
     public function homepage(): Response
     {
-        return new Response('hello world');
+        $dogbreeds = [
+            ['name' => 'dalmatian'],
+            ['name' => 'shepherd dog'],
+            ['name' => 'poodle'],
+            ['name' => 'boxer'],
+            ['name' => 'old english shepherd'],
+            ['name' => 'newfoundland'],
+            ['name' => 'golden retriever'],
+        ];
+        return $this->render('dogs/homepage.html.twig', ['title' => 'homepage',  'dogbreeds' => $dogbreeds ]);
     }
 
     #[Route('/dog_breed/{slug}', 'breed_dog')]
