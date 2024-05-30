@@ -1,11 +1,41 @@
-{% extends 'base.html.twig' %}
-{% block body %}
-    <div>
-        <h1>{{ title }}</h1>
-        <ul>
-            {% for dogbreed in dogbreeds %}
-                <li> {{ dogbreed.name }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-{% endblock %}
+
+    {% extends 'base.html.twig' %}
+
+    {% block title %}dog breeds| {{ parent() }}{% endblock %}
+
+    {% block body %}
+
+        <div class="overflow-hidden max-w-3xl bg-white mx-auto">
+            <img class="w-full" src="/images/favourite.jpeg" alt="more dogs">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-gray-900">{{ title }}</div>
+                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                    {% for dogbreed in dogbreeds %}
+                        <li class="py-3 sm:py-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="w-8 h-8 rounded-full" src="/images/download.jpeg" alt="Neil image">
+                                </div>
+                                <div class="flex-1 min-w-0 ms-4">
+                                    <p class="text-sm font-medium text-gray-900 ">
+                                        {{ dogbreed.name }}
+                                    </p>
+                                </div>
+                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                    medium-size
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class=" text-blue-900"><a href="#">add a new dog</a> </div>
+            </div>
+
+        </div>
+
+
+
+    {% endblock %}
+
+
+

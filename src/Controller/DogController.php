@@ -23,7 +23,8 @@ class DogController extends AbstractController
             ['name' => 'newfoundland'],
             ['name' => 'golden retriever'],
         ];
-        return $this->render('dogs/homepage.html.twig', ['title' => 'homepage',  'dogbreeds' => $dogbreeds ]);
+        return $this->render('dogs/homepage.html.twig', ['title' => 'Chose a dog',  'dogbreeds' => $dogbreeds ]);
+
     }
 
     #[Route('/dog_breed/{slug}', 'breed_dog')]

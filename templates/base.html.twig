@@ -1,22 +1,69 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
-        {% endblock %}
+<html lang="eda">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog breeds</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href={{ asset('styles/app.css') }}>
+</head>
+<body class="bg-gray-400">
+<!-- Main Navigation -->
+<nav class="bg-white text-black mb-5">
+    <div class="container mx-auto flex items-center justify-between px-4 py-2">
+        <a class="flex items-center space-x-2" href="/">
+            <img src="/images/logo.webp" alt="logo" class="w-16">
+            <span>Dog Breeds</span>
+        </a>
+        <button class="block lg:hidden px-2 py-1 border border-gray-600 rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="text-gray-600">☰</span>
+        </button>
+        <div class="hidden w-full lg:flex lg:items-center lg:justify-end" id="navbarNavDropdown">
+            <ul class="flex flex-col lg:flex-row lg:space-x-4">
+                <li class="nav-item">
+                    <a class="nav-link mt-5 lg:mt-0 text-black" href="#">Browse breeds</a>
+                </li>
+                <!-- Not Authenticated -->
+                <li class="nav-item"><button href="#" class="btn btn-primary btn-sm">Login</button></li>
+                <!-- End Not Authenticated -->
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-    <h1 class="text-amber-400 font-bold underline">
-        Hello world!
-    </h1>
+                <!-- If Authenticated -->
+                <li class="relative dropdown">
+                    <a class="flex items-center cursor-pointer" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-astronaut p-2 border border-black rounded-full text-4xl"></i>
+                    </a>
+                    <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 bg-white" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="block px-4 py-2 text-sm" href="#">My Mixes</a></li>
+                        <li><a class="block px-4 py-2 text-sm" href="#">Signout</a></li>
+                    </ul>
+                </li>
+                <!-- End If Authenticated -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Main Navigation -->
 
-        {% block body %}{% endblock %}
-    </body>
+
+{% block body%}
+
+{% endblock %}
+
+
+    <footer class="bg-white flex flex-wrap justify-between  py-3 my-4 border-t ">
+        <div class="flex items-center  mx-auto">
+
+            <span class="text-gray-500 mr-2"> A dummy website about dogs, <a class="text-blue-500" target="_blank" href="https:`//symfonycasts.com/screencast/symfony-fundamentals/bundles"> tutorial at symfonycast </a></span>
+
+
+
+        </div>
+
+    </footer>
+
+
+
+
+</body>
 </html>
