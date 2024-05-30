@@ -12,7 +12,7 @@
 <!-- Main Navigation -->
 <nav class="bg-white text-black mb-5">
     <div class="container mx-auto flex items-center justify-between px-4 py-2">
-        <a class="flex items-center space-x-2" href="/">
+        <a class="flex items-center space-x-2" href={{ path('app_dog') }}>
             <img src="/images/logo.webp" alt="logo" class="w-16">
             <span>Dog Breeds</span>
         </a>
@@ -22,7 +22,7 @@
         <div class="hidden w-full lg:flex lg:items-center lg:justify-end" id="navbarNavDropdown">
             <ul class="flex flex-col lg:flex-row lg:space-x-4">
                 <li class="nav-item">
-                    <a class="nav-link mt-5 lg:mt-0 text-black" href="#">Browse breeds</a>
+                    <a class="nav-link mt-5 lg:mt-0 text-black" href={{ path('breed_dog') }}>Browse breeds</a>
                 </li>
                 <!-- Not Authenticated -->
                 <li class="nav-item"><button href="#" class="btn btn-primary btn-sm">Login</button></li>
