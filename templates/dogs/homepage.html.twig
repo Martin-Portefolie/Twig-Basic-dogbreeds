@@ -23,11 +23,12 @@
                                 <div class="flex-1 min-w-0 ms-4" {{ stimulus_controller('dog-controls', {
                                     infoUrl: path('my_dog', { id: loop.index })
                                 }) }}>
+                                    <a class="text-gray-900"  {{ stimulus_action('dog-controls', 'play') }}>{{ dogbreed.name }}</a>
                                 </div>
 
-                                <div class="flex-1 min-w-0 ms-4" data-controller="dog-controls">
-                                    <p class="text-gray-900" data-action="click->dog-controls#myevent">{{ dogbreed.name }}</p>
-                                </div>
+{#                                <div class="flex-1 min-w-0 ms-4" data-controller="dog-controls">#}
+{#                                    <p class="text-gray-900" data-action="click->dog-controls#myevent">{{ dogbreed.name }}</p>#}
+{#                                </div>#}
                                 <div class="inline-flex items-center text-base font-semibold text-gray-900" {{ stimulus_controller('dog-controls') }}>
                                     {{dogbreed.size }}
                                 </div>
