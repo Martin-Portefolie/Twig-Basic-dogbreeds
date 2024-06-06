@@ -16,6 +16,15 @@
                                 <div class="flex-shrink-0">
                                     <img class="w-8 h-8 rounded-full" src={{ dogbreed.image}}  />
                                 </div>
+{#                                <div class="flex-1 min-w-0 ms-4" data-controller="dog-controls">#}
+{#                                    <p class="text-gray-900" data-action="click->dog-controls#myevent">{{ dogbreed.name }}</p>#}
+{#                                </div>#}
+
+                                <div class="flex-1 min-w-0 ms-4" {{ stimulus_controller('dog-controls', {
+                                    infoUrl: path('my_dog', { id: loop.index })
+                                }) }}>
+                                </div>
+
                                 <div class="flex-1 min-w-0 ms-4" data-controller="dog-controls">
                                     <p class="text-gray-900" data-action="click->dog-controls#myevent">{{ dogbreed.name }}</p>
                                 </div>

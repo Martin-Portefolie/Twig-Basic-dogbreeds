@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DogApiController extends AbstractController
 {
-    #[Route('/api/dogs/{id<\d+>}', methods: ['GET'])]
+    #[Route('/api/dogs/{id<\d+>}', name: 'my_dog', methods: ['GET'])]
 public function getDog(int $id, LoggerInterface $log ):Response
 {
 $dog =[
